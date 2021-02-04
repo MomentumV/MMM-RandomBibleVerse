@@ -1,23 +1,23 @@
-.MMM-DailyBibleVerse {
+.MMM-RandomBibleVerse {
     max-width: 100vh;
     height: auto;
     max-height: auto;
     line-height: 1em;
 }
 
-.MMM-DailyBibleVerse .xsmall,
-.MMM-DailyBibleVerse .default {
+.MMM-RandomBibleVerse .xsmall,
+.MMM-RandomBibleVerse .default {
     max-width: 50vh;
 }
 
-.MMM-DailyBibleVerse .small {
+.MMM-RandomBibleVerse .small {
     max-width: 60vh;
 }
 
-.MMM-DailyBibleVerse .medium {
+.MMM-RandomBibleVerse .medium {
     max-width: 75vh;
 }
 
-.MMM-DailyBibleVerse .large {
+.MMM-RandomBibleVerse .large {
     max-width: 100vh;
 }

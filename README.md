@@ -1,10 +1,10 @@
-# MMM-DailyBibleVerse
+# MMM-RandomBibleVerse
 This an extension for the [MagicMirror](https://github.com/MichMich/MagicMirror). It will display the verse of the day from www.biblegateway.com. You can change the version of the verse of the day in the config file. Here is a list of the supported Bible versions: https://www.biblegateway.com/versions/
 
 ## Installation
 1. Navigate into your MagicMirror's `modules` folder 
-2. Execute `git clone https://github.com/arthurgarzajr/MMM-DailyBibleVerse.git`
-3. Navigate to newly created folder `MMM-DailyBibleVerse`
+2. Execute `git clone https://github.com/arthurgarzajr/MMM-RandomBibleVerse.git`
+3. Navigate to newly created folder `MMM-RandomBibleVerse`
 4. Execute `npm install`
 
 ## Using the module
@@ -13,7 +13,7 @@ To use this module, add it to the modules array in the `config/config.js` file:
 ````javascript
 modules: [
 	{
-		module: 'MMM-DailyBibleVerse',
+		module: 'MMM-RandomBibleVerse',
 		position: 'bottom_bar',	// This can be any of the regions. Best result is in the bottom_bar as verses can take multiple lines in a day.
 		config: {
 			version: 'NIV', // This can be changed to any version you want that is offered by Bible Gateway. For a list, go here: https://www.biblegateway.com/versions/,

@@ -1,5 +1,5 @@
 /* Magic Mirror
- * Node Helper: MMM-DailyBibleVerse
+ * Node Helper: MMM-RandomBibleVerse
  *
  * By Arthur Garza
  * MIT Licensed.
@@ -11,7 +11,7 @@ var request = require('request');
 module.exports = NodeHelper.create({
 	// Subclass start method.
 	start: function() {
-		console.log("Started node_helper.js for MMM-DailyBibleVerse.");
+		console.log("Started node_helper.js for MMM-RandomBibleVerse.");
 	},
 
 	socketNotificationReceived: function(notification, payload) {
