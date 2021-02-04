@@ -1,9 +1,9 @@
 # MMM-RandomBibleVerse
-This an extension for the [MagicMirror](https://github.com/MichMich/MagicMirror). It will display the verse of the day from www.biblegateway.com. You can change the version of the verse of the day in the config file. Here is a list of the supported Bible versions: https://www.biblegateway.com/versions/
+This an extension for the [MagicMirror](https://github.com/MichMich/MagicMirror). It will display random verses from https://dailyverses.net/. You can change the version of the verse in the config file. Here is a list of the supported Bible versions: ['ESV','NIV','KJV','NKJV']
 
 ## Installation
-1. Navigate into your MagicMirror's `modules` folder 
-2. Execute `git clone https://github.com/arthurgarzajr/MMM-RandomBibleVerse.git`
+1. Navigate into your MagicMirror's `modules` folder
+2. Execute `git clone https://github.com/MomentumV/MMM-RandomBibleVerse`
 3. Navigate to newly created folder `MMM-RandomBibleVerse`
 4. Execute `npm install`
 
@@ -14,10 +14,10 @@ To use this module, add it to the modules array in the `config/config.js` file:
 modules: [
 	{
 		module: 'MMM-RandomBibleVerse',
-		position: 'bottom_bar',	// This can be any of the regions. Best result is in the bottom_bar as verses can take multiple lines in a day.
+		position: 'bottom_bar',	// This can be any of the regions. Best result is in the bottom_bar as verses can take multiple lines.
 		config: {
-			version: 'NIV', // This can be changed to any version you want that is offered by Bible Gateway. For a list, go here: https://www.biblegateway.com/versions/,
-	    	size: 'small' // default value is medium, but can be changed. 
+			version: 'ESV', // This can be changed to any of ['ESV','NIV','KJV','NKJV']
+	    	size: 'small' // default value is medium, but can be changed.
 		}
 	}
 ]
@@ -39,9 +39,9 @@ The following properties can be configured:
 	<tbody>
 		<tr>
 			<td><code>version</code></td>
-			<td>Here is a list of the supported Bible versions: https://www.biblegateway.com/versions/
+			<td>Here is a list of the supported Bible versions:  ['ESV','NIV','KJV','NKJV']
       		<br/>
-			Note that <code>version</code> also determines the language of the Bible verse. The language of the Bible reference, i.e. name of the book, is determined by the global <code>language</code> parameter in your config 
+			Note that <code>version</code> also determines the language of the Bible verse. The language of the Bible reference, i.e. name of the book, is determined by the global <code>language</code> parameter in your config
 			<br/>
       		Examples: <code>ESV</code>, <code>NIV</code>, <code>RV1960</code>, etc.
 			</td>
@@ -54,13 +54,13 @@ The following properties can be configured:
 </table>
 
 ## Dependencies
-- Access to the internet to download verse of the day from www.biblegateway.com.
+- Access to the internet to download verses from https://dailyverses.net/random-bible-verse/.
 - npm package `request`
 
 The MIT License (MIT)
 =====================
 
-Copyright © 2016-2017 Arthur Garza
+Copyright © 2021 Mordecai Veldt
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
