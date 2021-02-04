@@ -16,19 +16,20 @@ module.exports = NodeHelper.create({
 
 	socketNotificationReceived: function(notification, payload) {
 		console.log(this.name + " node helper received a socket notification: " + notification + " - Payload: " + payload);
-		this.bibleGatewayRequest(payload);
+		this.randomverseRequest(payload);
 	},
 
-	bibleGatewayRequest: function(version) {
+	dailyversesRequest: function(version) {
 		var self = this;
-		var bibleGatewayURL = "https://www.biblegateway.com/votd/get/?format=json&version=" + version
+		var randomverseURL = "https://dailyverses.net/random-bible-verse/" + version
 
-		request({ url: bibleGatewayURL, method: 'GET' }, function(error, response, body) {			
+		request({ url: randomverseURL, method: 'GET' }, function(error, response, body) {
 			if(!error && response.statusCode == 200){
 				console.log(body);
 				var result = JSON.parse(body);
-				self.sendSocketNotification('BIBLE_GATEWAY_RESULT', result);
+				//// TODO: trim result to relevant part with regx
+				self.sendSocketNotification('RANDOM_VERSE_RESULT', result);
 			}
-		});	
+		});
 	}
 });

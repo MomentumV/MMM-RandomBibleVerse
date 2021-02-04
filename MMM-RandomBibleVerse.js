@@ -88,7 +88,7 @@ Module.register("MMM-RandomBibleVerse", {
 
     socketNotificationReceived: function(notification, payload) {
         Log.log("socket received from Node Helper");
-        if(notification == "BIBLE_GATEWAY_RESULT"){
+        if(notification == "RANDOM_VERSE_RESULT"){
             var json = payload;
             Log.log(payload);
             this.verseOfTheDay = json.votd.text;
