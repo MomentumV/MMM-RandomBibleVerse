@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/MomentumV/MMM-RandomBibleVerse#readme",
   "dependencies": {
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "xpath": "^0.0.32",
+    "xmldom": "^0.4.0"
   }
 }
