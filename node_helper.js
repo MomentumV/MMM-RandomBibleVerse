@@ -28,15 +28,8 @@ module.exports = NodeHelper.create({
 		request({ url: randomverseURL, method: 'GET' }, function(error, response, body) {
 			if(!error && response.statusCode == 200){
 				var doc = new dom().parseFromString(body);
-				var result = xpath.evaluate(
-					"/tag/tag",  // xpath Expression
-					doc,      	// contextNode
-					null,				// namespaceResolver
-					xpath.XPathResult.ANY_TYPE, 	// resultType  //// TODO: what resultType do I need?
-					null			// result
-				)
+				var verse = xpath.select("string(//title)",doc);
 				console.log(body);
-				var result = JSON.parse(body);
 				//// TODO: trim result to relevant part with regx
 				self.sendSocketNotification('RANDOM_VERSE_RESULT', result);
 			}
