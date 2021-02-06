@@ -27,7 +27,7 @@ module.exports = NodeHelper.create({
 			if(!error && response.statusCode == 200){
 				var $ = cheerio.load(html);
 				var verse = $('span.v1');
-				var ref = verse.parent().children('vr').children('.vc');
+				var ref = verse.parent().children('.vr').children('.vc');
 				console.log(verse.text());
 				console.log(ref.text());
 				var result = {
