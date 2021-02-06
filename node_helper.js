@@ -7,8 +7,7 @@
 
 var NodeHelper = require("node_helper");
 var request = require('request');
-var xpath = require('xpath');
-var dom = require('xmldom').DOMParser;
+var cheerio = require('cheerio');
 
 module.exports = NodeHelper.create({
 	// Subclass start method.
@@ -24,23 +23,16 @@ module.exports = NodeHelper.create({
 	randomverseRequest: function(version) {
 		var self = this;
 		var randomverseURL = "https://dailyverses.net/random-bible-verse/" + version
-
-		request({ url: randomverseURL, method: 'GET' }, function(error, response, body) {
+		request({ url: randomverseURL, method: 'GET' }, function(error, response, html) {
 			if(!error && response.statusCode == 200){
-				// console.log(body);
-				var doc = new dom().parseFromString(body);
-				// console.log(doc);
-				var vnode = xpath.select("//span[@class='v1']", doc);
-				console.log(vnode);
-				var verse = vnode.toSTring();
-				var rnode = xpath.select("//div[@class='b1']/div[@class='vr']/a[@class='vc']", doc);
-				//var verse = xpath.select("string(//span[@class='v1'])",doc);
-				//var reference = xpath.select("string(//div[@class='b1']/div[@class='vr']/a[@class='vc']");
-				console.log(rnode);
-				var reference = rnode.toSTring();
+				var $ = cheerio.load(html);
+				var verse = $('span.v1');
+				var ref = verse.parent().children('vr').children('.vc');
+				console.log(verse.text());
+				console.log(ref.text());
 				var result = {
-					v: verse,
-					r: reference
+					v: verse.text(),
+					r: ref.text()
 				};
 				self.sendSocketNotification('RANDOM_VERSE_RESULT', result);
 			}
