@@ -27,6 +27,7 @@ module.exports = NodeHelper.create({
 
 		request({ url: randomverseURL, method: 'GET' }, function(error, response, body) {
 			if(!error && response.statusCode == 200){
+				console.log(body);
 				var doc = new dom().parseFromString(body);
 				var verse = xpath.select("string(//span[@class='v1'])",doc);
 				var reference = xpath.select("string(//div[@class='b1']/div[@class='vr']/a[@class='vc']");
