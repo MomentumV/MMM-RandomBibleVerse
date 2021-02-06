@@ -36,8 +36,8 @@ Module.register("MMM-RandomBibleVerse", {
         var verse = "";
         var reference = "";
 
-        if(this.verseOfTheDay != null && this.reference != null){
-            verse = this.verseOfTheDay;
+        if(this.verse != null && this.reference != null){
+            verse = this.verse;
 
             // split reference in book and chapter reference, ex. for
             // input "1 Corinthian 13:6,7" => "1 Corinthian", "13:6,7"
@@ -80,7 +80,7 @@ Module.register("MMM-RandomBibleVerse", {
     getTranslations: function() {
         return {
                 de: "translations/de.json",
-                en: "translations/en.json",                
+                en: "translations/en.json",
                 es: "translations/es.json",
                 nl: "translations/nl.json",
         }
@@ -91,8 +91,8 @@ Module.register("MMM-RandomBibleVerse", {
         if(notification == "RANDOM_VERSE_RESULT"){
             var json = payload;
             Log.log(payload);
-            this.verseOfTheDay = json.votd.text;
-            this.reference = json.votd.reference;
+            this.verse = json.v;
+            this.reference = json.r;
 
             this.updateDom();
         }
