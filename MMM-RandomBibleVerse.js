@@ -91,8 +91,8 @@ Module.register("MMM-RandomBibleVerse", {
         if(notification == "RANDOM_VERSE_RESULT"){
             var json = payload;
             Log.log(payload);
-            this.verse = json.votd.text;
-            this.reference = json.votd.reference;
+            this.verse = json.v;
+            this.reference = json.r;
 
             this.updateDom();
         }
