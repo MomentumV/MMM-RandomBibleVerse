@@ -34,6 +34,7 @@ module.exports = NodeHelper.create({
 					v: verse.text(),
 					r: ref.text()
 				};
+				*/
 				self.sendSocketNotification('RANDOM_VERSE_RESULT', result);
 			}
 		});
