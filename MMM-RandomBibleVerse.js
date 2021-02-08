@@ -15,6 +15,7 @@ Module.register("MMM-RandomBibleVerse", {
         var self = this;
 
         var configuredVersion = this.config.version;
+        var minutes = this.config.interval;
 
         //Do this once first
         self.sendSocketNotification('START', configuredVersion);
@@ -22,7 +23,7 @@ Module.register("MMM-RandomBibleVerse", {
         //Then every hour
         setInterval(function() {
                 self.sendSocketNotification('START', configuredVersion);
-        }, 3600000); //perform every hour (3600000 milliseconds)
+        }, minutes*60*1000); //perform every x minutes (in milliseconds)
     },
 
     getStyles: function () {
