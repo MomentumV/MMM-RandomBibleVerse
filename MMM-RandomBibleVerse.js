@@ -5,9 +5,9 @@ Module.register("MMM-RandomBibleVerse", {
     result: [],
     defaults: {
         // Default Bible version is ESV.
-        // Change it to a version that BibleGateway.com supports.
-        // https://www.biblegateway.com/usage/linking/versionslist/
-        version: 'ESV'
+        // Change it to a version that dailyverses.net supports.
+        version: 'ESV',
+        interval: 60 // minutes
     },
 
     start: function() {
