@@ -16,6 +16,15 @@ Module.register("MMM-RandomBibleVerse", {
 
         var configuredVersion = this.config.version;
         var minutes = this.config.interval;
+        if (typeof minutes === 'number') {
+          if (minutes < 0.2 ) {
+            console.log('Interval must be a number greater than 0.2; resetting to default 60 minutes');
+            minutes = 60;
+          }
+        } else {
+          console.log('interval must be a number. resetting to default 60 minutes');
+          minutes = 60;
+        }
 
         //Do this once first
         self.sendSocketNotification('START', configuredVersion);
