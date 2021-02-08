@@ -17,7 +17,8 @@ modules: [
 		position: 'bottom_bar',	// This can be any of the regions. Best result is in the bottom_bar as verses can take multiple lines.
 		config: {
 			version: 'ESV', // This can be changed to any of ['ESV','NIV','KJV','NKJV']
-	    	size: 'small' // default value is medium, but can be changed.
+			interval: 20,  // default is 60 minutes between verse updates
+	    size: 'large' // default value is medium, but can be changed.
 		}
 	}
 ]
@@ -47,6 +48,10 @@ The language of the Bible reference, i.e. name of the book, is determined by the
 		<tr>
 			<td><code>size</code></td>
 			<td>Default size is medium but it can be overriden with <code>xsmall</code>, <code>small</code> or <code>large</code>.</td>
+		</tr>
+		<tr>
+			<td><code>interval</code></td>
+			<td><i>Optional</i> Default is 60 minutes, but you can choose a different update interval in minutes </td>
 		</tr>
 	</tbody>
 </table>
