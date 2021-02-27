@@ -1,23 +1,15 @@
 .MMM-RandomBibleVerse {
-    max-width: 100vh;
+    max-width: 100%;
     height: auto;
     max-height: auto;
     line-height: 1em;
 }
 
 .MMM-RandomBibleVerse .xsmall,
-.MMM-RandomBibleVerse .default {
-    max-width: 50vh;
-}
+.MMM-RandomBibleVerse .default
 
-.MMM-RandomBibleVerse .small {
-    max-width: 60vh;
-}
+.MMM-RandomBibleVerse .small
 
-.MMM-RandomBibleVerse .medium {
-    max-width: 75vh;
-}
+.MMM-RandomBibleVerse .medium
 
-.MMM-RandomBibleVerse .large {
-    max-width: 100vh;
-}
+.MMM-RandomBibleVerse .large 
